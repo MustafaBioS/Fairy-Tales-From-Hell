@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbf61utapuqxq"]
+[gd_scene load_steps=12 format=3 uid="uid://cbf61utapuqxq"]
 
 [ext_resource type="Texture2D" uid="uid://b4ej4pwbtsjqi" path="res://assets/shrek.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://dk8wrgrk4shhe" path="res://Scripts/menu.gd" id="1_158mb"]
 [ext_resource type="Texture2D" uid="uid://qebwkwi2t8mx" path="res://assets/image_720.png" id="1_cayip"]
 [ext_resource type="Texture2D" uid="uid://cqdlfmbb3sknc" path="res://assets/harry.png" id="3_cayip"]
 
@@ -15,20 +16,34 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
-bg_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+bg_color = Color(0.9279928, 0.000719651, 0.93185556, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rerr"]
-bg_color = Color(0.05197101, 0.051970936, 0.051970974, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
+bg_color = Color(0.9279928, 0.000719651, 0.93185556, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhh6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwsa2"]
+bg_color = Color(0.9279928, 0.000719651, 0.93185556, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsrd8"]
+bg_color = Color(0.9279928, 0.000719651, 0.93185556, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -37,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_158mb")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -66,9 +82,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 250.0
+offset_left = 225.0
 offset_top = -159.0
-offset_right = 532.0
+offset_right = 507.0
 offset_bottom = 209.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -79,7 +95,7 @@ theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_158mb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xhh6f")
 text = "
 
@@ -107,14 +123,17 @@ theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1rerr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wwsa2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jsrd8")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xhh6f")
 text = "
 
 Harry"
 
-[node name="+" type="Sprite2D" parent="Button2"]
+[node name="Harry" type="Sprite2D" parent="Button2"]
 position = Vector2(145, 130)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_cayip")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
