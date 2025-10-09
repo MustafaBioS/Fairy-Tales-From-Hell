@@ -11,6 +11,7 @@ radius = 0.4
 height = 1.8
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_v0iea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -20,4 +21,4 @@ mesh = SubResource("CapsuleMesh_f60y1")
 shape = SubResource("CapsuleShape3D_v0iea")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44804335, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6076238, 0)

@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://jqqe5h5y4e8j"]
+[gd_scene load_steps=3 format=3 uid="uid://jqqe5h5y4e8j"]
 
 [ext_resource type="PackedScene" uid="uid://7ka80i6638m5" path="res://Scenes/player.tscn" id="1_ebmjs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebmjs"]
+size = Vector3(26.902, 1.7478516, 26.676)
 
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2346733, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 2
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+size = Vector3(26.902466, 1, 26.67646)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17392579, 0)
+shape = SubResource("BoxShape3D_ebmjs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.028933495, 0.99958134, 0, -0.99958134, 0.028933495, 0, 28.613749, 0)
