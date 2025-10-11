@@ -11,8 +11,16 @@ var accel = 10
 
 @onready var animation = $AnimationPlayer
 @onready var navagent = $NavigationAgent3D
+@onready var mesh = $MeshInstance3D
 
 
+func _ready():
+	if Menu.enemy == "shrek":
+		print("spawned shrek")
+		mesh.set_surface_override_material(0, preload("uid://b4ej4pwbtsjqi"))
+	elif Menu.enemy == "harry":
+		print("spawned harry")
+		mesh.set_surface_override_material(0, preload("uid://cqdlfmbb3sknc"))
 
 func _process(delta):
 	if hp <= 0:

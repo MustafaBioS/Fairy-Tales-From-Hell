@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://vqidw3l1iq3w"]
+[gd_scene load_steps=6 format=3 uid="uid://vqidw3l1iq3w"]
 
 [ext_resource type="Script" uid="uid://bd6kec2hkesk8" path="res://Scenes/enemy.gd" id="1_hghv2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ne65n"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hghv2"]
+bg_color = Color(0.646029, 0.64602906, 0.6460289, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hghv2"]
 size = Vector3(1, 2, 1)
@@ -16,6 +24,53 @@ script = ExtResource("1_hghv2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ne65n")
+
+[node name="Jump" type="Panel" parent="MeshInstance3D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -223.0
+offset_right = -77.0
+offset_bottom = -148.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hghv2")
+
+[node name="Label" type="Label" parent="MeshInstance3D/Jump"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -27.0
+offset_right = 35.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Jump"
+
+[node name="Label2" type="Label" parent="MeshInstance3D/Jump"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.75
+offset_top = -32.5
+offset_right = 31.75
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 17
+text = "Space"
+horizontal_alignment = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_hghv2")
