@@ -13,9 +13,13 @@ var accel = 10
 @onready var navagent = $NavigationAgent3D
 @onready var mesh = $MeshInstance3D
 
+func enemy():
+	pass
+
 func _process(delta):
 	if hp <= 0:
 		state = States.die
+	print(hp)
 	
 func _physics_process(delta):
 	if not is_on_floor():

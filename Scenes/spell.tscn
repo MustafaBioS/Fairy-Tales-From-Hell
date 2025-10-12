@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwhxcod7xqop"]
+
+[ext_resource type="Script" uid="uid://2qopvqehiywp" path="res://Scripts/spell.gd" id="1_nx6qu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xug6c"]
+size = Vector3(0.21717224, 0.22879334, 0.22256546)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iklnv"]
+albedo_color = Color(0.25533813, 0.6366354, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f460e"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Spell" type="Area3D"]
+script = ExtResource("1_nx6qu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026657172, -0.0055557154, 0.0007404275)
+shape = SubResource("BoxShape3D_xug6c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_iklnv")
+mesh = SubResource("BoxMesh_f460e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

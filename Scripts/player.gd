@@ -8,6 +8,8 @@ const sensitivity = 0.003
 var sliding = false
 var crouched = false
 
+var bullet = load("res://Scenes/spell.tscn")
+@onready var pos = $CSGCylinder3D/pos
 
 @onready var animation = $AnimationPlayer
 @onready var slide = $CanvasLayer/Slide
@@ -107,7 +109,17 @@ func _unhandled_input(event):
 		
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
+		
+	if Input.is_action_just_pressed("attack"):
+		animation.play("attack")
 
+		
+func _attack():
+	var instance = bullet.instantiate()
+	instance.position = pos.global_position
+	instance.transform.basis = pos.global_transform.basis
+	get_parent().add_child(instance)
+		
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
