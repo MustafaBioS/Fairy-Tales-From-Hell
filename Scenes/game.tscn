@@ -44,7 +44,7 @@ size = Vector3(1.1111984, 7.8046875, 17.365452)
 size = Vector3(1.1347008, 7.8046875, 29.317497)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldgsr"]
-size = Vector3(1.1111984, 7.8046875, 42.29225)
+size = Vector3(1.1111984, 7.8046875, 42.622135)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rfjv2"]
 size = Vector3(1.1347008, 7.8046875, 43.304558)
@@ -156,7 +156,7 @@ size = Vector3(1, 6.6805725, 29.206127)
 material = SubResource("StandardMaterial3D_qxrlw")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.107581, 3.8, -10.163271)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.709211, 3.8, -10.163271)
 size = Vector3(1, 6.6805725, 42.42348)
 material = SubResource("StandardMaterial3D_qxrlw")
 
@@ -240,6 +240,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.712448, 3.9187782, 71.5957
 size = Vector3(1, 6.918129, 4.83349)
 material = SubResource("StandardMaterial3D_qxrlw")
 
+[node name="CSGBox3D28" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0006666, 3.8, -26.04049)
+size = Vector3(1, 6.6805725, 30.778252)
+material = SubResource("StandardMaterial3D_qxrlw")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0872871, 0)
 shape = SubResource("BoxShape3D_ebmjs")
@@ -297,7 +302,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4265327, 3.4023438, 4.94145
 shape = SubResource("BoxShape3D_rku1e")
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.24844, 3.4023438, -10.12829)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.630178, 3.4023438, -10.12829)
 shape = SubResource("BoxShape3D_ldgsr")
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="StaticBody3D"]

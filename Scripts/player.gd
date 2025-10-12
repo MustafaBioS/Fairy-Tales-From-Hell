@@ -9,7 +9,7 @@ var sliding = false
 var crouched = false
 
 var bullet = load("res://Scenes/spell.tscn")
-@onready var pos = $CSGCylinder3D/pos
+@onready var pos = $player/CSGCylinder3D/pos
 
 @onready var animation = $AnimationPlayer
 @onready var slide = $CanvasLayer/Slide

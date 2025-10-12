@@ -11,7 +11,7 @@ func _physics_process(delta):
 	var forward = -transform.basis.z 
 	forward.y = 0 
 	forward = forward.normalized() 
-	position += forward * speed * delta
+	position += forward * -speed * delta
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.has_method("enemy"):
