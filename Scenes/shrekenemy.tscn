@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vqidw3l1iq3w"]
 
-[ext_resource type="Script" uid="uid://bd6kec2hkesk8" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://bd6kec2hkesk8" path="res://Scripts/enemy.gd" id="1_cdkme"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ne65n"]
 size = Vector3(1, 2, 1)
@@ -23,7 +23,7 @@ radius = 0.80322266
 radius = 26.0
 
 [node name="Enemy" type="CharacterBody3D"]
-script = ExtResource("1_hghv2")
+script = ExtResource("1_cdkme")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ne65n")
