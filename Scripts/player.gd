@@ -2,11 +2,12 @@ extends CharacterBody3D
 
 @onready var camera = $Camera3D
 
-var SPEED = 5.0
+var SPEED = 7.5
 var JUMP_VELOCITY = 4.5
 const sensitivity = 0.003
 var sliding = false
 var crouched = false
+
 
 @onready var animation = $AnimationPlayer
 @onready var slide = $CanvasLayer/Slide
@@ -54,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		
 		sliding = true
 		animation.play("RESET")	
-		SPEED = 5.0
+		SPEED = 7.5
 		JUMP_VELOCITY = 4.5
 		await get_tree().create_timer(2.0).timeout
 		sliding = false
@@ -64,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("slide"):
 		animation.play("RESET")	
-		SPEED = 5.0
+		SPEED = 7.5
 		JUMP_VELOCITY = 4.5
 		slide.modulate.a = 1
 		sliding = true
@@ -72,11 +73,11 @@ func _physics_process(delta: float) -> void:
 		sliding = false
 		
 	if Input.is_action_just_pressed("run"):
-		SPEED = 10.0
-		JUMP_VELOCITY = 5.5
+		SPEED = 12.5
+		JUMP_VELOCITY = 6.0
 		sprint.modulate.a = 0.5
 	if Input.is_action_just_released("run"):
-		SPEED = 5.0
+		SPEED = 7.5
 		JUMP_VELOCITY = 4.5
 		sprint.modulate.a = 1
 
@@ -90,12 +91,11 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("crouch") and crouched == true:
 		print("uncrouching")
 		animation.play("RESET")
-		SPEED = 5.0
+		SPEED = 7.5
 		JUMP_VELOCITY = 4.5
 		crouched = false
-	
-	
-	
+		
+	var hp = GameManager.hp
 		
 	move_and_slide()
 

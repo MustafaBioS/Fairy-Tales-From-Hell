@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://vqidw3l1iq3w"]
+[gd_scene load_steps=7 format=3 uid="uid://vqidw3l1iq3w"]
 
-[ext_resource type="Script" uid="uid://bd6kec2hkesk8" path="res://Scenes/enemy.gd" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://bd6kec2hkesk8" path="res://Scripts/enemy.gd" id="1_hghv2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ne65n"]
 size = Vector3(1, 2, 1)
@@ -15,6 +15,9 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hghv2"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hghv2"]
+radius = 0.80322266
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1f0kj"]
 radius = 8.037598
@@ -75,6 +78,12 @@ horizontal_alignment = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_hghv2")
 
+[node name="KillZone" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+shape = SubResource("CylinderShape3D_hghv2")
+
 [node name="ChaseZone" type="Area3D" parent="."]
 collision_mask = 2
 
@@ -85,5 +94,7 @@ shape = SubResource("CylinderShape3D_1f0kj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+[connection signal="body_exited" from="KillZone" to="." method="_on_kill_zone_body_exited"]
 [connection signal="body_entered" from="ChaseZone" to="." method="_on_chase_zone_body_entered"]
 [connection signal="body_exited" from="ChaseZone" to="." method="_on_chase_zone_body_exited"]
