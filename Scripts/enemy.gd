@@ -6,7 +6,7 @@ var target = null
 var hp = 100
 var gravity = 9.8
 var state = States.idle
-var speed = 7.5
+var speed = 5.0
 var accel = 10
 
 @onready var animation = $AnimationPlayer

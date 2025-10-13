@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c24csmk8tttxx"]
+
+[ext_resource type="PackedScene" uid="uid://cpat8dgjs0ie0" path="res://parthenon_orphie.glb" id="1_a0mmv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxwuu"]
+size = Vector3(3.3539352, 5.9005585, 7.026245)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+collision_mask = 2
+
+[node name="parthenon_orphie" parent="." instance=ExtResource("1_a0mmv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.7639872, 0, 1.2851787)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.012755, -0.6628494, 0.94332075)
+shape = SubResource("BoxShape3D_wxwuu")
