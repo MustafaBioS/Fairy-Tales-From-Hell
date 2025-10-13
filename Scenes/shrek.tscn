@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://jqqe5h5y4e8j"]
+[gd_scene load_steps=42 format=3 uid="uid://jqqe5h5y4e8j"]
 
-[ext_resource type="PackedScene" uid="uid://vqidw3l1iq3w" path="res://Scenes/shrekenemy.tscn" id="1_2dkjy"]
 [ext_resource type="PackedScene" uid="uid://7ka80i6638m5" path="res://Scenes/player.tscn" id="2_kgyqe"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qxrlw"]
@@ -23,7 +22,7 @@ size = Vector3(1.0429688, 7.8046875, 36.012886)
 size = Vector3(1.1347008, 7.8046875, 24.3403)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wowpa"]
-size = Vector3(1.1157227, 7.9656982, 9.549959)
+size = Vector3(1.1157227, 7.9656982, 20.534462)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6g32"]
 size = Vector3(1.3031006, 7.6273804, 22.068157)
@@ -46,11 +45,11 @@ size = Vector3(1.1347008, 7.8046875, 29.317497)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldgsr"]
 size = Vector3(1.1111984, 7.8046875, 42.622135)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rfjv2"]
-size = Vector3(1.1347008, 7.8046875, 43.304558)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6dcog"]
+size = Vector3(1.1347008, 7.8046875, 44.569824)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1phco"]
-size = Vector3(1.2968588, 7.8046875, 23.111069)
+size = Vector3(1.2968588, 7.8046875, 35.60192)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nb51f"]
 size = Vector3(1.2968588, 7.8046875, 23.216732)
@@ -73,11 +72,53 @@ size = Vector3(1.1111984, 7.8046875, 12.115537)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t8sx"]
 size = Vector3(1.2147789, 7.8046875, 11.46971)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_exi56"]
-size = Vector3(1.2147789, 7.8046875, 47.18625)
+[sub_resource type="BoxShape3D" id="BoxShape3D_fneik"]
+size = Vector3(1.2147789, 7.8046875, 38.33956)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mg4q0"]
 size = Vector3(1.2147789, 7.8046875, 5.3863444)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_exi56"]
+size = Vector3(1.2147789, 7.8046875, 47.104336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgyqe"]
+size = Vector3(1.1347008, 7.8046875, 33.532707)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxiya"]
+size = Vector3(1.1347008, 7.8046875, 19.143612)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_643rv"]
+size = Vector3(1.1347008, 7.8046875, 52.376175)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_os5nc"]
+size = Vector3(1.1347008, 7.8046875, 24.223)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6o21h"]
+size = Vector3(1.1347008, 7.8046875, 29.285608)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eauv7"]
+size = Vector3(1.1347008, 7.7495117, 30.631893)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fawce"]
+size = Vector3(1.1347008, 7.7495117, 23.609085)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xw0b"]
+size = Vector3(1.2304363, 7.8046875, 36.167294)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_54h2a"]
+size = Vector3(1.2968588, 7.8046875, 46.81656)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7jhw"]
+size = Vector3(1.3988609, 7.8046875, 12.328608)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ttal4"]
+size = Vector3(1.2968588, 7.8046875, 31.88102)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4box"]
+size = Vector3(1.1347008, 7.8046875, 29.552399)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2dkjy"]
+size = Vector3(1.1347008, 7.8046875, 24.439453)
 
 [sub_resource type="Environment" id="Environment_ebmjs"]
 background_mode = 1
@@ -92,11 +133,8 @@ volumetric_fog_density = 0.01
 
 [node name="World" type="Node3D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_2dkjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.474985, 1.5248044, 28.078657)
-
 [node name="Player" parent="." instance=ExtResource("2_kgyqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2346733, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.2346733, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_mask = 2
@@ -191,8 +229,8 @@ size = Vector3(1, 6.6805725, 12.793378)
 material = SubResource("StandardMaterial3D_qxrlw")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.521303, 3.8, 15.003553)
-size = Vector3(1, 6.6805725, 23.152882)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.79173, 3.8, 15.003553)
+size = Vector3(1, 6.6805725, 35.693737)
 material = SubResource("StandardMaterial3D_qxrlw")
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
@@ -246,8 +284,88 @@ size = Vector3(1, 6.6805725, 30.778252)
 material = SubResource("StandardMaterial3D_qxrlw")
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.521856, 3.8, 54.025105)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.60462, 3.8, 54.025105)
+size = Vector3(1, 6.6805725, 32.165527)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.073457, 3.8, -41.900772)
+size = Vector3(1, 6.6805725, 19.126919)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.114407, 3.8, -41.444355)
+size = Vector3(1, 6.6805725, 33.622795)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 29.72632, 3.8, -57.769188)
+size = Vector3(1, 6.6805725, 22.333122)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.289223, 3.8, -47.924194)
+size = Vector3(1, 6.6805725, 52.119034)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 52.879784, 3.8, -68.446014)
+size = Vector3(1, 6.6805725, 22.333122)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.03186, 3.8, -54.08985)
+size = Vector3(1, 6.6805725, 29.70184)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 55.829567, 3.8, -38.80942)
+size = Vector3(1, 6.6805725, 28.232695)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.297615, 3.8, 36.613945)
+size = Vector3(1, 6.6805725, 36.000103)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.013386, 3.8, -41.928574)
+size = Vector3(1, 6.6805725, 30.012852)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.536034, 3.8, -58.21626)
+size = Vector3(1, 6.6805725, 31.637774)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.073457, 3.8, -61.86136)
+size = Vector3(1, 6.6805725, 24.246199)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.521856, 3.8, 62.433414)
 size = Vector3(1, 6.6805725, 46)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.14558, 3.8, 38.683746)
+size = Vector3(1, 6.6805725, 46.578323)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.183226, 3.8, 38.149273)
+size = Vector3(1, 6.6805725, 30.756662)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 69.54926, 3.8, 31.03358)
+size = Vector3(1, 6.6805725, 9.46545)
+material = SubResource("StandardMaterial3D_qxrlw")
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="StaticBody3D/CSGBoxes/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.03501, 3.8, 18.089596)
+size = Vector3(1, 6.6805725, 20.493956)
 material = SubResource("StandardMaterial3D_qxrlw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -311,15 +429,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.6
 shape = SubResource("BoxShape3D_ldgsr")
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.492478, 3.4023438, -19.828613)
-shape = SubResource("BoxShape3D_rfjv2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.492478, 3.4023438, -20.172123)
+shape = SubResource("BoxShape3D_6dcog")
 
 [node name="CollisionShape3D17" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.492478, 3.4023438, 26.642624)
 shape = SubResource("BoxShape3D_3dryh")
 
 [node name="CollisionShape3D18" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.527744, 3.4023438, 15.060064)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.77317, 3.4023438, 15.060064)
 shape = SubResource("BoxShape3D_1phco")
 
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="StaticBody3D"]
@@ -351,8 +469,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2984605, 3.4023438, 68.8110
 shape = SubResource("BoxShape3D_7t8sx")
 
 [node name="CollisionShape3D26" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.647903, 3.4023438, 63.60002)
-shape = SubResource("BoxShape3D_exi56")
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26.03029, 3.4023438, 63.60002)
+shape = SubResource("BoxShape3D_fneik")
 
 [node name="CollisionShape3D27" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.732416, 3.4023438, 71.85277)
@@ -361,6 +479,86 @@ shape = SubResource("BoxShape3D_mg4q0")
 [node name="CollisionShape3D28" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.397064, 3.4023438, 54.129738)
 shape = SubResource("BoxShape3D_exi56")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.045408, 3.4023438, 54.129738)
+shape = SubResource("BoxShape3D_exi56")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1028509, 3.4023438, -25.895493)
+shape = SubResource("BoxShape3D_kgyqe")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.10665, 3.4023438, -41.895763)
+shape = SubResource("BoxShape3D_lxiya")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.99588, 3.4023438, -41.423813)
+shape = SubResource("BoxShape3D_kgyqe")
+
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.99588, 3.4023438, -41.423813)
+shape = SubResource("BoxShape3D_kgyqe")
+
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.238354, 3.4023438, -48.01046)
+shape = SubResource("BoxShape3D_643rv")
+
+[node name="CollisionShape3D35" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 29.793213, 3.4023438, -57.8588)
+shape = SubResource("BoxShape3D_os5nc")
+
+[node name="CollisionShape3D36" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 55.299, 3.4023438, -38.8754)
+shape = SubResource("BoxShape3D_6o21h")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.9675, 3.4299316, -53.715164)
+shape = SubResource("BoxShape3D_eauv7")
+
+[node name="CollisionShape3D38" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 52.649292, 3.4299316, -68.18776)
+shape = SubResource("BoxShape3D_fawce")
+
+[node name="CollisionShape3D39" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.216362, 3.4023438, 36.604904)
+shape = SubResource("BoxShape3D_2xw0b")
+
+[node name="CollisionShape3D40" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.05391, 3.4023438, 38.830948)
+shape = SubResource("BoxShape3D_54h2a")
+
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.983488, 3.4023438, 62.60737)
+shape = SubResource("BoxShape3D_54h2a")
+
+[node name="CollisionShape3D42" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976068, 3.4023438, 68.03563)
+shape = SubResource("BoxShape3D_b7jhw")
+
+[node name="CollisionShape3D43" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.170538, 3.4023438, 38.800755)
+shape = SubResource("BoxShape3D_ttal4")
+
+[node name="CollisionShape3D44" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.585548, 3.4023438, -41.923115)
+shape = SubResource("BoxShape3D_j4box")
+
+[node name="CollisionShape3D45" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.357063, 3.4023438, -57.797417)
+shape = SubResource("BoxShape3D_2dkjy")
+
+[node name="CollisionShape3D46" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.089436, 3.4023438, -61.953545)
+shape = SubResource("BoxShape3D_2dkjy")
+
+[node name="CollisionShape3D47" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 69.564995, 3.4828491, 31.137344)
+shape = SubResource("BoxShape3D_wowpa")
+
+[node name="CollisionShape3D48" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.143265, 3.4828491, 18.141735)
+shape = SubResource("BoxShape3D_wowpa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.1273071, 0.99186337, 0, -0.99186337, -0.1273071, 0, 88.060905, -10.58964)

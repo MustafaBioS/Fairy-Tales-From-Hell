@@ -98,6 +98,10 @@ func _physics_process(delta: float) -> void:
 		crouched = false
 		
 	var hp = GameManager.hp
+	
+	if hp <= 0:
+		get_tree().reload_current_scene()
+		hp = 100
 		
 	move_and_slide()
 

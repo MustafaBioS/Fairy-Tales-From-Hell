@@ -1,87 +1,111 @@
-[gd_scene load_steps=7 format=3 uid="uid://vqidw3l1iq3w"]
+[gd_scene load_steps=10 format=3 uid="uid://vqidw3l1iq3w"]
 
 [ext_resource type="Script" uid="uid://bd6kec2hkesk8" path="res://Scripts/enemy.gd" id="1_cdkme"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ne65n"]
-size = Vector3(1, 2, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hghv2"]
-bg_color = Color(0.646029, 0.64602906, 0.6460289, 1)
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+[ext_resource type="PackedScene" uid="uid://0ltg5uylnowa" path="res://models/shrek_walk_cycle.glb" id="2_obp3q"]
+[ext_resource type="AudioStream" uid="uid://bmra1iqkshxds" path="res://assets/she-was-a-fairy.mp3" id="3_7cqva"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hghv2"]
-size = Vector3(1, 2, 1)
+size = Vector3(1.1743854, 1.9429827, 0.9134053)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hghv2"]
-radius = 0.80322266
+radius = 1.7006836
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1f0kj"]
 radius = 26.0
 
+[sub_resource type="Animation" id="Animation_obp3q"]
+resource_name = "die"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_sound"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7cqva"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43w4k"]
+_data = {
+&"RESET": SubResource("Animation_7cqva"),
+&"die": SubResource("Animation_obp3q")
+}
+
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_cdkme")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_ne65n")
-
-[node name="Jump" type="Panel" parent="MeshInstance3D"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = -223.0
-offset_right = -77.0
-offset_bottom = -148.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hghv2")
-
-[node name="Label" type="Label" parent="MeshInstance3D/Jump"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -27.0
-offset_right = 35.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 26
-text = "Jump"
-
-[node name="Label2" type="Label" parent="MeshInstance3D/Jump"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -31.75
-offset_top = -32.5
-offset_right = 31.75
-offset_bottom = -8.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 17
-text = "Space"
-horizontal_alignment = 1
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1774213, 0.70341253, -1.4069722)
 shape = SubResource("BoxShape3D_hghv2")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_obp3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1930449, -0.7539519, -1.4110068)
 
 [node name="KillZone" type="Area3D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9120989, 0, -1.5234351)
 shape = SubResource("CylinderShape3D_hghv2")
 
 [node name="ChaseZone" type="Area3D" parent="."]
@@ -91,8 +115,14 @@ collision_mask = 2
 shape = SubResource("CylinderShape3D_1f0kj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_43w4k")
+}
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_7cqva")
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
 [connection signal="body_exited" from="KillZone" to="." method="_on_kill_zone_body_exited"]

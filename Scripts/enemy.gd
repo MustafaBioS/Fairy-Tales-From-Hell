@@ -12,6 +12,8 @@ var accel = 10
 @onready var animation = $AnimationPlayer
 @onready var navagent = $NavigationAgent3D
 @onready var mesh = $MeshInstance3D
+@onready var audio = $AudioStreamPlayer3D
+
 
 func enemy():
 	pass
@@ -19,6 +21,7 @@ func enemy():
 func _process(delta):
 	if hp <= 0:
 		state = States.die
+		velocity = Vector3.ZERO
 	print(hp)
 	
 func _physics_process(delta):
@@ -34,9 +37,14 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		velocity = velocity.lerp(direction * speed, accel * delta)
 		#animation.play("")
-	
+	elif state == States.die:
+		animation.play("die")
+		return
+		
 	move_and_slide()
 	
+func _play_sound():
+	audio.play()
 
 func _on_chase_zone_body_entered(body: Node3D) -> void:
 	if body.has_method("player") and state != States.die:
