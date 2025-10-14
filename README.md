@@ -14,8 +14,10 @@
 ---
 **<h1>Notes</h1>**
 **I was unable to complete this game fully as the enemies broke at the end for some reason and i was in a hurry while submitting due to school so i will probably be continuing this in the next weeks**
+**You can watch the demo video [here](https://github.com/MustafaBioS/Fairy-Tales-From-Hell/blob/951eefe769ef5477aba9586a2a5d1f778c1cf6de/Godot%20Engine%202025.10.14%20-%2012.25.01.mp4).
 ---
 **<h1>Collab</h1>**
 **I worked on the game while Julia worked on the game assets.**
+
 
 
