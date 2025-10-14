@@ -14,5 +14,8 @@
 ---
 **<h1>Notes</h1>**
 **I was unable to complete this game fully as the enemies broke at the end for some reason and i was in a hurry while submitting due to school so i will probably be continuing this in the next weeks**
+---
+**<h1>Collab</h1>**
+**I worked on the game while Julia worked on the game assets.**
 
 
